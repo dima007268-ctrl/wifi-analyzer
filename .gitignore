@@ -1,0 +1,17 @@
+# Байт-код Python
+__pycache__/
+*.pyc
+
+# Виртуальные окружения
+venv/
+.venv/
+
+# Файлы редакторов
+*.sublime-workspace
+*.sublime-project
+.vscode/
+.idea/
+
+# Файлы Windows
+Thumbs.db
+desktop.ini
