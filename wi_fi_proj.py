@@ -41,6 +41,7 @@ def parser_networks_windows(output):
 	encryption_pattern = re.compile(r"^Шифрование\s*:\s*(.+)")
 	channel_pattern = re.compile(r"^Канал\s*:\s*(\d+)")
 	radio_pattern = re.compile(r"^Тип радио\s*:\s*(.+)")
+	bssid_pattern = re.compile(r"^BSSID \d+\s*:\s*(.+)")
 
 	networks = []
 	current_network = {}
@@ -69,6 +70,9 @@ def parser_networks_windows(output):
 
 		if radio_match := radio_pattern.search(line):
 			current_network["Radio"] = radio_match.group(1)
+
+		if bssid_match := bssid_pattern.search(line):
+			current_network["BSSID"] = bssid_match.group(1)
 
 
 
